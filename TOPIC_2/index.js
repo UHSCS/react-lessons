@@ -73,7 +73,9 @@ export default class Presentation extends Component {
             source={code.html_form_1}
             theme='external'
             overflow='overflow'
-            textSize='20'
+            margin='20px auto'
+            height='100vh'
+            textSize='18'
           />
         </Slide>
 
@@ -88,7 +90,8 @@ export default class Presentation extends Component {
             lang='jsx'
             source={code.jsx_example}
             theme='external'
-            overflow='scroll'
+            overflow = 'overflow'
+            height = '80vh'
             textSize='32'
           />
           <List textColor='tertiary'>
