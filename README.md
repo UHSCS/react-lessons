@@ -33,7 +33,7 @@ Please ensure that you have `Node.js` installed on your computer. You can learn 
 ## Topic Outline
 
 | Week |               Topic               |                                            Summary                                            | Supplements |
-|:----:|:---------------------------------:|:---------------------------------------------------------------------------------------------:|:-----------:|
+|-----:|:---------------------------------:|:----------------------------------------------------------------------------------------------|:------------|
 |    0 |          [Background][0]          | Introduction to Object-Oriented Programming (OOP) and background necessary to begin the unit. |             |
 |    1 |    [Thinking in Components][1]    | Introduce the idea of a component and how we can use it to "objectify" our programming world. |             |
 |    2 | [Thinking in Components pt. 2][2] | Translating our first theoretical "component" into pure JavaScript.                           |             |
@@ -47,6 +47,10 @@ Please ensure that you have `Node.js` installed on your computer. You can learn 
 [0]: TOPIC_0/
 [1]: TOPIC_1/
 [2]: TOPIC_2/
-[3]: TOPIC_2/
-[4]: TOPIC_2/
-[5]: TOPIC_2/
+[3]: TOPIC_3/
+[4]: TOPIC_4/
+[5]: TOPIC_5/
+[6]: TOPIC_6/
+[7]: TOPIC_7/
+[8]: TOPIC_8/
+[9]: TOPIC_9/

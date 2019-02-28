@@ -1,4 +1,5 @@
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 /* eslint-disable */
 
 var path = require("path");
@@ -57,6 +58,15 @@ module.exports = {
           {
             loader: "css-loader"
           }
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          "style-loader",
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "sass-loader"
         ]
       },
       {

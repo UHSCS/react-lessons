@@ -49,6 +49,13 @@ module.exports = {
       }],
       include: __dirname
     }, {
+      test: /\.sass$/,
+      use: [
+        "style-loader",
+        "css-loader",
+        "sass-loader"
+      ]
+    }, {
       test: /\.svg$/,
       use: [{
         loader: 'url-loader',

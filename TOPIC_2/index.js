@@ -11,23 +11,24 @@ import {
   Notes,
   Quote,
   Slide,
-  Text
+  Text,
+  ComponentPlayground,
+  CodePane,
+  Code
 } from 'spectacle';
 
 import createTheme from 'spectacle/lib/themes/default';
 
-import Highlight from 'react-highlight';
-import Prism from 'prismjs';
-
-const images = {
-  
-};
+import Highlight, { defaultProps } from 'prism-react-renderer';
+import vsDarkPlus from 'prism-react-renderer/themes/vsDarkPlus';
 
 // Import code highlighting css
 import '../highlight.css';
 
 // Require CSS
 require('normalize.css');
+
+import { code } from './code';
 
 const theme = createTheme(
   {
@@ -44,7 +45,6 @@ const theme = createTheme(
 
 export default class Presentation extends Component {
   componentDidMount () {
-    Prism.highlightAll();
   }
 
   render() {
@@ -53,6 +53,7 @@ export default class Presentation extends Component {
         transition={['slide']}
         transitionDuration={500}
         theme={theme}
+        progress='bar'
       >
         <Slide transition={['zoom']} bgColor='primary'>
           <Heading size={1} caps lineHeight={1} textColor='secondary' textSize='175'>
@@ -64,37 +65,41 @@ export default class Presentation extends Component {
         </Slide>
 
         <Slide transition={['fade']} bgColor='tertiary'>
-          <Heading size={6} textColor='primary' caps>
-            Typography
+          <Heading size={5} textColor='primary'>
+            Last week...
           </Heading>
-          <pre className='language-javascript, language-markup'>
-            <code className='language-jsx'>
-            {`
-              function doSomething() {
-                return null;
-              }
-            `}
-            </code>
-          </pre>
+          <CodePane
+            lang='jsx'
+            source={code.html_form_1}
+            theme='external'
+            overflow='overflow'
+            textSize='20'
+          />
         </Slide>
 
         <Slide transition={['fade']} bgColor='primary' textColor='tertiary'>
-          <Heading size={6} textColor='secondary' caps>
-            Standard List
+          <Heading size={4} textColor='secondary' caps>
+            JSX
           </Heading>
-          <List>
-            <ListItem>Item 1</ListItem>
-            <ListItem>Item 2</ListItem>
-            <ListItem>Item 3</ListItem>
-            <ListItem>Item 4</ListItem>
+          <Text textSize='32'>
+            Consider the following...
+          </Text>
+          <CodePane
+            lang='jsx'
+            source={code.jsx_example}
+            theme='external'
+            overflow='scroll'
+            textSize='32'
+          />
+          <List textColor='tertiary'>
+            <ListItem>XML/HTML-like markup language</ListItem>
+            <ListItem>Not entirely a string, nor is it HTML</ListItem>
+            <ListItem>Produces React "elements", rendered by the DOM</ListItem>
           </List>
         </Slide>
 
         <Slide transition={['fade']} bgColor='secondary' textColor='primary'>
-          <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite margin='10px 0 0 30px'>Author</Cite>
-          </BlockQuote>
+          <ComponentPlayground theme='external' previewBackgroundColor='black' />
         </Slide>
       </Deck>
     );
